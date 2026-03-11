@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  AWS_REGION: us-east-1
+  AWS_REGION: us-west-1
   AGENT_NAME: strands_agent
 
 permissions:
@@ -25,12 +25,12 @@ jobs:
       with:
         python-version: '3.12'
 
-    - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@d0834ad3a60a024346910e522a81b0002bd37fea
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
       with:
-        role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-        role-session-name: GitHubActions-AgentCore-Test
-        aws-region: ${{ env.AWS_REGION }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
 
     - name: Install dependencies
       run: |
