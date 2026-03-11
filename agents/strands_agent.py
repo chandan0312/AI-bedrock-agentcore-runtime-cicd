@@ -13,7 +13,7 @@ app = BedrockAgentCoreApp()
 
 
 # Configure the Claude model for the agent with guardrail
-model_id = "us.anthropic.claude-sonnet-4-20250514-v1:0"
+model_id = "amazon.nova-pro-v1:0"
 
 # Load guardrail ID if available
 guardrail_config = None
